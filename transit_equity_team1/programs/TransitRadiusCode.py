@@ -8,7 +8,49 @@ import shapely
 from geopandas import GeoSeries
 from shapely.geometry import Point
 from shapely.geometry import Polygon
+from shapely.geometry import MultiPolygon
 
+import shapely.wkt
+
+def main():
+    fileN = "transit_equity_team1\\programs\\tract_incomes_merged.csv"
+    #indf = gpd.GeoDataFrame.from_file(fileN)
+    #df = pd.read_csv(fileN)
+    #gdf = gpd.GeoDataFrame(df['geometry'], crs="EPSG:4326")
+    #d = {'income': df['income'], 'geometry': df['geometry']}
+    #gdf = gpd.GeoDataFrame(d, crs= 'EPSG:4326')
+    #print(gdf)
+    #print(gdf.dtypes)
+    #for row in gdf:
+        #print(1)
+    inpfile = csv.reader(open(fileN, 'r'))
+    ct = 0
+    pLs = []
+    incomeLs = []
+    for row in inpfile:
+        ct += 1 
+        print(ct)
+        if (ct == 1):
+            continue
+        incomeLs.append(row[6]) #income
+        P = shapely.wkt.loads(row[9]) #santizes the string polygon to regular polygon
+        pLs.append(P)
+        #print(type(P))
+        #print(P)
+        #print(row[9])
+    #print(indf.head(3))
+    # for idx, row in indf.iterrows():
+    #     if type(row.geometry) == Polygon:
+    #         print(row)
+    #     elif type(row.geometry) == MultiPolygon:
+    #         print(0)
+    #for idx, row in indf.itterrows():
+       # print(1)
+    
+
+    #drawRadius()
+    return 0
+"""
 def main():
     fileN = "transit_equity_team1\\programs\\tract_incomes_merged.csv"
     df = pd.read_csv(fileN)
@@ -105,4 +147,5 @@ def main():
         poly = Polygon(t)
         break
     return 0
+"""
 main()
