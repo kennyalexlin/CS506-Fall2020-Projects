@@ -5,6 +5,8 @@ import numpy as np
 import requests
 import csv
 import shapely
+
+#import matplotlib.pyplot as plt
 from geopandas import GeoSeries
 from shapely.geometry import Point
 from shapely.geometry import Polygon
@@ -49,6 +51,16 @@ def main():
     
 
     #drawRadius()
+    #drawRadius2()
+
+    #for p in pLs:
+        #print(p.area)
+        #p.plot()
+
+
+    #matplot lib missing package for some reason on my machine local environemtn despite installing it..
+    #g = GeoSeries(pLs)
+    #g.plot()
     return 0
 """
 def main():
