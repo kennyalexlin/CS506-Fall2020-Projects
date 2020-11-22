@@ -29,6 +29,8 @@ def main():
     ct = 0
     pLs = []
     incomeLs = []
+
+    ctDiffIncomes = 0
     for row in inpfile:
         ct += 1 
         print(ct)
@@ -62,7 +64,15 @@ def main():
     g = GeoSeries(pLs)
     g.plot()
     plt.show()
+
+    #load pati bus stop spoints
+    #draw radius of 0.5 miles.
+    #1/60th of a degree is approx 1 mile draw point on that
+    fileN2 = "transit_equity_team1\\programs\\pati_bus_stops.csv"
+    #draw radius around each of the points in pati_bus_stops.csv latitude and longitude
+    #
     return 0
+
 """
 def main():
     fileN = "transit_equity_team1\\programs\\tract_incomes_merged.csv"
