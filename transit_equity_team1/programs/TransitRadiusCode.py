@@ -6,7 +6,7 @@ import requests
 import csv
 import shapely
 
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 from geopandas import GeoSeries
 from shapely.geometry import Point
 from shapely.geometry import Polygon
@@ -59,8 +59,9 @@ def main():
 
 
     #matplot lib missing package for some reason on my machine local environemtn despite installing it..
-    #g = GeoSeries(pLs)
-    #g.plot()
+    g = GeoSeries(pLs)
+    g.plot()
+    plt.show()
     return 0
 """
 def main():
