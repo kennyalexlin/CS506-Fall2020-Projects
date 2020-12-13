@@ -15,16 +15,16 @@
 | revenues       | Annual revenues for this stop for routes, in the order of `route_ids` |
 | revenue_annual | Total annual revenue for this stop (sum of values in `revenues`) |
 
-2. `./output/stops_weighed.csv` (`./output/shapefile/stops.shp` is the shapefile version of it)
+2. `./output/stops_weighed.csv` (`./output/stops.shp` is the shapefile version of it)
 
-| Column Name      | Description                                                  |
-| ---------------- | ------------------------------------------------------------ |
-| STOP_ID          | ID for this stop                                             |
-| location         | geometry Point of this stop                                  |
-| geometry         | geometry Polygon of the 0.5 mile radius circle               |
-| impacted_tractid | ID for tracts that intercept the circle                      |
-| proportion       | proportion of area/population of the impacted tracts         |
-| income           | weighed income based on proportion                           |
-| income_level     | income level for this tract, from 0-4, and -1 means missing value |
-| impacted_pop     | weighted population impacted based on proportion             |
+| Column Name        | Description                                                  |
+| ------------------ | ------------------------------------------------------------ |
+| STOP_ID            | ID for this stop                                             |
+| geometry           | geometry Point of this stop                                  |
+| impacted_geoid     | GeoID for tracts that intercept the circle                   |
+| proportion_2tract  | proportion of intercepted area over tract area               |
+| proportion_2circle | proportion of intercepted area over circle area              |
+| income             | weighed income based on proportion                           |
+| income_level       | income level for this tract, from 0-4, and -1 means missing value |
+| impacted_pop       | weighted population impacted based on proportion             |
 
